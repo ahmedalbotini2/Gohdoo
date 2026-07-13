@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ghadhoo — غُضُّوا | Lower Your Gaze, Elevate Your Screen</title>
+<meta name="description" content="Ghadhoo is an AI-powered, on-device screen filtering app that helps you lower your gaze in real time, with absolute privacy.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700;900&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= NOISE / TEXTURE LAYER ================= -->
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="crescent" d="M28 6C18 8 11 17 11 27c0 12 9 19 19 19-14 3-27-7-27-22C3 10 15 1 28 6Z"/>
+          <circle class="crescent-dot" cx="34" cy="12" r="2.4"/>
+        </svg>
+      </span>
+      <span class="brand-text">Ghadhoo</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#features" data-i18n="nav_features">Features</a>
+      <a href="#privacy" data-i18n="nav_privacy">Privacy</a>
+      <a href="#download" data-i18n="nav_download">Download</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon" id="themeIcon" aria-hidden="true"></i>
+      </button>
+      <button class="icon-btn lang-btn" id="langToggle" type="button" aria-label="Toggle language">
+        <span id="langLabel">AR</span>
+      </button>
+      <a href="https://www.mediafire.com/file/zaalpbkd3r0wwe3/Ghodoo_blur.apk/file" target="_blank" rel="noopener" class="btn btn-primary btn-small" data-i18n="nav_cta">
+        <span data-i18n="nav_cta_text">Download</span>
+      </a>
+    </div>
+
+    <button class="icon-btn menu-btn" id="menuToggle" type="button" aria-label="Open menu">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#features" data-i18n="nav_features">Features</a>
+    <a href="#privacy" data-i18n="nav_privacy">Privacy</a>
+    <a href="#download" data-i18n="nav_download">Download</a>
+    <div class="mobile-nav-actions">
+      <button class="icon-btn" id="themeToggleMobile" type="button" aria-label="Toggle theme">
+        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+      </button>
+      <button class="icon-btn lang-btn" id="langToggleMobile" type="button" aria-label="Toggle language">
+        <span>AR</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container hero-inner">
+
+      <div class="hero-copy">
+        <blockquote class="ayah" id="ayahBlock">
+          <p class="ayah-arabic" lang="ar" dir="rtl">قُل لِّلْمُؤْمِنِينَ يَغُضُّوا مِنْ أَبْصَارِهِمْ وَيَحْفَظُوا فُرُوجَهُمْ ۚ ذَٰلِكَ أَزْكَىٰ لَهُمْ ۗ إِنَّ اللَّهَ خَبِيرٌ بِمَا يَصْنَعُونَ</p>
+          <p class="ayah-translation" data-i18n="ayah_translation">Tell the believing men to reduce [some] of their vision and guard their private parts. That is purer for them. Indeed, Allah is Acquainted with what they do.</p>
+          <cite class="ayah-ref" data-i18n="ayah_ref">Surah An-Nur, 24:30</cite>
+        </blockquote>
+
+        <h1 class="hero-title">
+          <span data-i18n="hero_title_1">Your Assistant for</span>
+          <span class="gold-text" data-i18n="hero_title_2">a Purer Digital Life</span>
+        </h1>
+
+        <p class="hero-sub" data-i18n="hero_sub">System-wide AI content filtering that protects your screen in real time — with absolute privacy.</p>
+
+        <div class="hero-actions">
+          <a href="https://www.mediafire.com/file/zaalpbkd3r0wwe3/Ghodoo_blur.apk/file" target="_blank" rel="noopener" class="btn btn-primary btn-large">
+            <i class="fa-brands fa-android" aria-hidden="true"></i>
+            <span data-i18n="hero_cta_download">Download for Android</span>
+          </a>
+          <a href="#features" class="btn btn-ghost btn-large">
+            <span data-i18n="hero_cta_learn">Learn More</span>
+            <i class="fa-solid fa-arrow-down-long btn-arrow" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <p class="hero-note"><i class="fa-solid fa-lock" aria-hidden="true"></i> <span data-i18n="hero_note">On-device by default. Nothing you see is ever stored.</span></p>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="phone-mock">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="mock-statusbar"></div>
+            <div class="mock-app-bar">
+              <span class="mock-app-dot"></span>
+              <span class="mock-app-title">Ghadhoo</span>
+            </div>
+            <div class="mock-feed">
+              <div class="mock-card"></div>
+              <div class="mock-card blurred">
+                <div class="blur-shield">
+                  <i class="fa-solid fa-eye-slash"></i>
+                </div>
+              </div>
+              <div class="mock-card small"></div>
+              <div class="mock-card blurred tall">
+                <div class="blur-shield">
+                  <i class="fa-solid fa-eye-slash"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="phone-glow"></div>
+        </div>
+        <div class="orbit-ring ring-1"></div>
+        <div class="orbit-ring ring-2"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= TRUST STRIP ================= -->
+  <section class="trust-strip">
+    <div class="container trust-inner">
+      <div class="trust-item">
+        <i class="fa-solid fa-microchip-ai"></i>
+        <span data-i18n="trust_1">Runs on-device</span>
+      </div>
+      <div class="trust-item">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span data-i18n="trust_2">Zero data storage</span>
+      </div>
+      <div class="trust-item">
+        <i class="fa-solid fa-bolt"></i>
+        <span data-i18n="trust_3">Real-time filtering</span>
+      </div>
+      <div class="trust-item">
+        <i class="fa-solid fa-sliders"></i>
+        <span data-i18n="trust_4">Fully customizable</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURES ================= -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="features_eyebrow">How Ghadhoo Protects You</span>
+        <h2 data-i18n="features_title">One purpose. Three layers of care.</h2>
+      </div>
+
+      <div class="features-grid">
+
+        <article class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-house-signal"></i></div>
+          <h3 data-i18n="feature_1_title">Local AI</h3>
+          <p data-i18n="feature_1_desc">Fully on-device analysis of text and images. Works offline, and nothing ever leaves your phone.</p>
+          <span class="feature-tag" data-i18n="feature_1_tag">100% Private</span>
+        </article>
+
+        <article class="feature-card feature-card-highlight">
+          <div class="feature-icon"><i class="fa-solid fa-cloud-bolt"></i></div>
+          <h3 data-i18n="feature_2_title">Pro AI</h3>
+          <p data-i18n="feature_2_desc">Optional cloud-assisted engine for higher accuracy on complex scenes, when you need extra strength.</p>
+          <span class="feature-tag" data-i18n="feature_2_tag">Maximum Accuracy</span>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon"><i class="fa-solid fa-sliders"></i></div>
+          <h3 data-i18n="feature_3_title">Deep Customization</h3>
+          <p data-i18n="feature_3_desc">Adjust blur intensity, choose your overlay color, and tune the experience to fit your comfort.</p>
+          <span class="feature-tag" data-i18n="feature_3_tag">Made Yours</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRIVACY ================= -->
+  <section class="privacy" id="privacy">
+    <div class="container privacy-inner">
+      <div class="privacy-visual" aria-hidden="true">
+        <div class="privacy-seal">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div class="privacy-ring"></div>
+      </div>
+      <div class="privacy-copy">
+        <span class="eyebrow" data-i18n="privacy_eyebrow">Our Promise</span>
+        <h2 data-i18n="privacy_title">What you see stays with you. Always.</h2>
+        <p data-i18n="privacy_desc">Ghadhoo never stores, saves, or shares your screen data. Every frame is analyzed in the moment, then forgotten — by design, not by policy.</p>
+        <ul class="privacy-list">
+          <li><i class="fa-solid fa-check"></i> <span data-i18n="privacy_point_1">No screenshots ever saved</span></li>
+          <li><i class="fa-solid fa-check"></i> <span data-i18n="privacy_point_2">No screen data sent to servers by default</span></li>
+          <li><i class="fa-solid fa-check"></i> <span data-i18n="privacy_point_3">No account required to use the app</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DOWNLOAD / CTA ================= -->
+  <section class="cta-section" id="download">
+    <div class="container cta-inner">
+      <span class="eyebrow" data-i18n="cta_eyebrow">Begin Today</span>
+      <h2 data-i18n="cta_title">Lower your gaze. Raise your peace.</h2>
+      <p data-i18n="cta_sub">Free to download. Runs quietly in the background, protecting every app on your screen.</p>
+      <a href="https://www.mediafire.com/file/zaalpbkd3r0wwe3/Ghodoo_blur.apk/file" target="_blank" rel="noopener" class="btn btn-primary btn-large">
+        <i class="fa-brands fa-android" aria-hidden="true"></i>
+        <span data-i18n="cta_button">Download Ghadhoo</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="brand footer-brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="crescent" d="M28 6C18 8 11 17 11 27c0 12 9 19 19 19-14 3-27-7-27-22C3 10 15 1 28 6Z"/>
+          <circle class="crescent-dot" cx="34" cy="12" r="2.4"/>
+        </svg>
+      </span>
+      <span class="brand-text">Ghadhoo</span>
+    </div>
+    <p class="footer-copy" data-i18n="footer_copy">© 2026 Ghadhoo App. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
