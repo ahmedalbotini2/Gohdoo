@@ -52,6 +52,7 @@
       howto_title: "How to Use Ghadhoo",
       howto_desc: "A quick walkthrough of setup and how the filter works on your screen.",
       howto_video_fallback: "Your browser does not support the video tag.",
+      howto_watch: "Watch",
 
       cta_eyebrow: "Begin Today",
       cta_title: "Lower your gaze. Raise your peace.",
@@ -107,6 +108,7 @@
       howto_title: "طريقة استخدام غُضُّوا",
       howto_desc: "جولة سريعة على طريقة الإعداد وكيف يعمل الفلتر على شاشتك.",
       howto_video_fallback: "متصفحك لا يدعم عرض الفيديو.",
+      howto_watch: "مشاهدة",
 
       cta_eyebrow: "ابدأ اليوم",
       cta_title: "غُضّ بصرك، وارتقِ بسكينتك.",
@@ -323,6 +325,34 @@
   }
 
   /* =========================================================
+     How-to-use expand/collapse toggle
+  ========================================================= */
+  function initHowToToggle() {
+    const toggle = document.getElementById("howtoToggle");
+    const collapse = document.getElementById("howtoCollapse");
+    if (!toggle || !collapse) return;
+
+    function setHeight() {
+      collapse.style.maxHeight = collapse.scrollHeight + "px";
+    }
+
+    toggle.addEventListener("click", function () {
+      const isOpen = collapse.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+
+      if (isOpen) {
+        setHeight();
+      } else {
+        collapse.style.maxHeight = "0px";
+      }
+    });
+
+    window.addEventListener("resize", function () {
+      if (collapse.classList.contains("is-open")) setHeight();
+    });
+  }
+
+  /* =========================================================
      Init
   ========================================================= */
   document.addEventListener("DOMContentLoaded", function () {
@@ -331,6 +361,7 @@
     initMobileMenu();
     initScrollReveal();
     initHeroDemo();
+    initHowToToggle();
 
     document.getElementById("themeToggle").addEventListener("click", toggleTheme);
     document.getElementById("themeToggleMobile").addEventListener("click", toggleTheme);

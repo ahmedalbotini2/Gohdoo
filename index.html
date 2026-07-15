@@ -420,17 +420,26 @@
         <p data-i18n="howto_desc">A quick walkthrough of setup and how the filter works on your screen.</p>
       </div>
 
-      <div class="howto-video-wrap">
-        <video
-          id="howtoVideo"
-          class="howto-video"
-          controls
-          playsinline
-          preload="metadata"
-          poster="">
-          <source id="howtoVideoSource" src="res/screenshot_EN.mp4" type="video/mp4">
-          <span data-i18n="howto_video_fallback">Your browser does not support the video tag.</span>
-        </video>
+      <div class="howto-toggle-wrap">
+        <button type="button" class="howto-toggle" id="howtoToggle" aria-expanded="false" aria-controls="howtoCollapse">
+          <span data-i18n="howto_watch">Watch</span>
+          <i class="fa-solid fa-chevron-down howto-arrow" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="howto-collapse" id="howtoCollapse">
+        <div class="howto-video-wrap">
+          <video
+            id="howtoVideo"
+            class="howto-video"
+            controls
+            playsinline
+            preload="metadata"
+            poster="">
+            <source id="howtoVideoSource" src="res/screenshot_EN.mp4" type="video/mp4">
+            <span data-i18n="howto_video_fallback">Your browser does not support the video tag.</span>
+          </video>
+        </div>
       </div>
     </div>
   </section>
