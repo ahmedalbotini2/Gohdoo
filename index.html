@@ -108,26 +108,218 @@
       <div class="hero-visual" aria-hidden="true">
         <div class="phone-mock">
           <div class="phone-notch"></div>
-          <div class="phone-screen">
+          <div class="phone-screen" id="phoneScreen">
+            <div class="phone-view yt-view is-active" id="ytView">
             <div class="mock-statusbar"></div>
-            <div class="mock-app-bar">
-              <span class="mock-app-dot"></span>
-              <span class="mock-app-title">Ghadhoo</span>
+
+            <div class="yt-topbar">
+              <i class="fa-solid fa-bars"></i>
+              <span class="yt-logo"><i class="fa-solid fa-play yt-play-icon"></i> <span>Playlist</span></span>
+              <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-            <div class="mock-feed">
-              <div class="mock-card"></div>
-              <div class="mock-card blurred">
-                <div class="blur-shield">
-                  <i class="fa-solid fa-eye-slash"></i>
+            <div class="yt-playlist-head">
+              <span class="yt-playlist-title">Watch Later</span>
+              <span class="yt-playlist-count">128 videos</span>
+            </div>
+
+            <div class="yt-scroll-mask">
+              <div class="yt-list" id="ytList">
+
+                <div class="yt-item">
+                  <div class="yt-thumb blurred">
+                    <img src="https://picsum.photos/seed/ghadhoo1/160/96" alt="" loading="lazy">
+                    <span class="yt-duration">4:12</span>
+                    <div class="blur-shield"><i class="fa-solid fa-eye-slash"></i></div>
+                  </div>
+                  <div class="yt-meta">
+                    <span class="yt-line yt-line-title"></span>
+                    <span class="yt-line yt-line-sub"></span>
+                  </div>
                 </div>
-              </div>
-              <div class="mock-card small"></div>
-              <div class="mock-card blurred tall">
-                <div class="blur-shield">
-                  <i class="fa-solid fa-eye-slash"></i>
+
+                <div class="yt-item">
+                  <div class="yt-thumb blurred">
+                    <img src="https://picsum.photos/seed/ghadhoo2/160/96" alt="" loading="lazy">
+                    <span class="yt-duration">9:47</span>
+                    <div class="blur-shield"><i class="fa-solid fa-eye-slash"></i></div>
+                  </div>
+                  <div class="yt-meta">
+                    <span class="yt-line yt-line-title short"></span>
+                    <span class="yt-line yt-line-sub"></span>
+                  </div>
                 </div>
+
+                <div class="yt-item">
+                  <div class="yt-thumb blurred">
+                    <img src="https://picsum.photos/seed/ghadhoo3/160/96" alt="" loading="lazy">
+                    <span class="yt-duration">2:03</span>
+                    <div class="blur-shield"><i class="fa-solid fa-eye-slash"></i></div>
+                  </div>
+                  <div class="yt-meta">
+                    <span class="yt-line yt-line-title"></span>
+                    <span class="yt-line yt-line-sub short"></span>
+                  </div>
+                </div>
+
+                <div class="yt-item">
+                  <div class="yt-thumb blurred">
+                    <img src="https://picsum.photos/seed/ghadhoo4/160/96" alt="" loading="lazy">
+                    <span class="yt-duration">6:30</span>
+                    <div class="blur-shield"><i class="fa-solid fa-eye-slash"></i></div>
+                  </div>
+                  <div class="yt-meta">
+                    <span class="yt-line yt-line-title short"></span>
+                    <span class="yt-line yt-line-sub"></span>
+                  </div>
+                </div>
+
+                <div class="yt-item">
+                  <div class="yt-thumb blurred">
+                    <img src="https://picsum.photos/seed/ghadhoo5/160/96" alt="" loading="lazy">
+                    <span class="yt-duration">11:18</span>
+                    <div class="blur-shield"><i class="fa-solid fa-eye-slash"></i></div>
+                  </div>
+                  <div class="yt-meta">
+                    <span class="yt-line yt-line-title"></span>
+                    <span class="yt-line yt-line-sub"></span>
+                  </div>
+                </div>
+
+                <!-- duplicated set for a seamless infinite scroll loop -->
+                <div class="yt-item" aria-hidden="true">
+                  <div class="yt-thumb blurred">
+                    <img src="https://picsum.photos/seed/ghadhoo1/160/96" alt="" loading="lazy">
+                    <span class="yt-duration">4:12</span>
+                    <div class="blur-shield"><i class="fa-solid fa-eye-slash"></i></div>
+                  </div>
+                  <div class="yt-meta">
+                    <span class="yt-line yt-line-title"></span>
+                    <span class="yt-line yt-line-sub"></span>
+                  </div>
+                </div>
+
+                <div class="yt-item" aria-hidden="true">
+                  <div class="yt-thumb blurred">
+                    <img src="https://picsum.photos/seed/ghadhoo2/160/96" alt="" loading="lazy">
+                    <span class="yt-duration">9:47</span>
+                    <div class="blur-shield"><i class="fa-solid fa-eye-slash"></i></div>
+                  </div>
+                  <div class="yt-meta">
+                    <span class="yt-line yt-line-title short"></span>
+                    <span class="yt-line yt-line-sub"></span>
+                  </div>
+                </div>
+
+                <div class="yt-item" aria-hidden="true">
+                  <div class="yt-thumb blurred">
+                    <img src="https://picsum.photos/seed/ghadhoo3/160/96" alt="" loading="lazy">
+                    <span class="yt-duration">2:03</span>
+                    <div class="blur-shield"><i class="fa-solid fa-eye-slash"></i></div>
+                  </div>
+                  <div class="yt-meta">
+                    <span class="yt-line yt-line-title"></span>
+                    <span class="yt-line yt-line-sub short"></span>
+                  </div>
+                </div>
+
+                <div class="yt-item" aria-hidden="true">
+                  <div class="yt-thumb blurred">
+                    <img src="https://picsum.photos/seed/ghadhoo4/160/96" alt="" loading="lazy">
+                    <span class="yt-duration">6:30</span>
+                    <div class="blur-shield"><i class="fa-solid fa-eye-slash"></i></div>
+                  </div>
+                  <div class="yt-meta">
+                    <span class="yt-line yt-line-title short"></span>
+                    <span class="yt-line yt-line-sub"></span>
+                  </div>
+                </div>
+
+                <div class="yt-item" aria-hidden="true">
+                  <div class="yt-thumb blurred">
+                    <img src="https://picsum.photos/seed/ghadhoo5/160/96" alt="" loading="lazy">
+                    <span class="yt-duration">11:18</span>
+                    <div class="blur-shield"><i class="fa-solid fa-eye-slash"></i></div>
+                  </div>
+                  <div class="yt-meta">
+                    <span class="yt-line yt-line-title"></span>
+                    <span class="yt-line yt-line-sub"></span>
+                  </div>
+                </div>
+
               </div>
             </div>
+            </div>
+
+            <div class="phone-view reels-view" id="reelsView">
+              <div class="reels-track" id="reelsTrack">
+
+                <div class="reel-slide">
+                  <img src="https://picsum.photos/seed/ghadhooreel1/240/500" alt="" loading="lazy">
+                  <div class="reel-blur-shield"><i class="fa-solid fa-eye-slash"></i></div>
+                  <div class="reel-gradient-top"></div>
+                  <div class="reel-gradient-bottom"></div>
+                  <div class="reel-actions">
+                    <span class="reel-icon"><i class="fa-solid fa-heart"></i></span>
+                    <span class="reel-icon"><i class="fa-solid fa-comment"></i></span>
+                    <span class="reel-icon"><i class="fa-solid fa-share"></i></span>
+                  </div>
+                  <div class="reel-caption">
+                    <span class="reel-line reel-line-user"></span>
+                    <span class="reel-line reel-line-text"></span>
+                  </div>
+                </div>
+
+                <div class="reel-slide">
+                  <img src="https://picsum.photos/seed/ghadhooreel2/240/500" alt="" loading="lazy">
+                  <div class="reel-blur-shield"><i class="fa-solid fa-eye-slash"></i></div>
+                  <div class="reel-gradient-top"></div>
+                  <div class="reel-gradient-bottom"></div>
+                  <div class="reel-actions">
+                    <span class="reel-icon"><i class="fa-solid fa-heart"></i></span>
+                    <span class="reel-icon"><i class="fa-solid fa-comment"></i></span>
+                    <span class="reel-icon"><i class="fa-solid fa-share"></i></span>
+                  </div>
+                  <div class="reel-caption">
+                    <span class="reel-line reel-line-user short"></span>
+                    <span class="reel-line reel-line-text"></span>
+                  </div>
+                </div>
+
+                <div class="reel-slide">
+                  <img src="https://picsum.photos/seed/ghadhooreel3/240/500" alt="" loading="lazy">
+                  <div class="reel-blur-shield"><i class="fa-solid fa-eye-slash"></i></div>
+                  <div class="reel-gradient-top"></div>
+                  <div class="reel-gradient-bottom"></div>
+                  <div class="reel-actions">
+                    <span class="reel-icon"><i class="fa-solid fa-heart"></i></span>
+                    <span class="reel-icon"><i class="fa-solid fa-comment"></i></span>
+                    <span class="reel-icon"><i class="fa-solid fa-share"></i></span>
+                  </div>
+                  <div class="reel-caption">
+                    <span class="reel-line reel-line-user"></span>
+                    <span class="reel-line reel-line-text short"></span>
+                  </div>
+                </div>
+
+                <div class="reel-slide">
+                  <img src="https://picsum.photos/seed/ghadhooreel4/240/500" alt="" loading="lazy">
+                  <div class="reel-blur-shield"><i class="fa-solid fa-eye-slash"></i></div>
+                  <div class="reel-gradient-top"></div>
+                  <div class="reel-gradient-bottom"></div>
+                  <div class="reel-actions">
+                    <span class="reel-icon"><i class="fa-solid fa-heart"></i></span>
+                    <span class="reel-icon"><i class="fa-solid fa-comment"></i></span>
+                    <span class="reel-icon"><i class="fa-solid fa-share"></i></span>
+                  </div>
+                  <div class="reel-caption">
+                    <span class="reel-line reel-line-user short"></span>
+                    <span class="reel-line reel-line-text"></span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
           </div>
           <div class="phone-glow"></div>
         </div>

@@ -228,6 +228,68 @@
   }
 
   /* =========================================================
+     Hero phone demo: playlist -> full-screen reels cycle
+  ========================================================= */
+  function initHeroDemo() {
+    const phoneScreen = document.getElementById("phoneScreen");
+    const reelsView = document.getElementById("reelsView");
+    const reelsTrack = document.getElementById("reelsTrack");
+    if (!phoneScreen || !reelsView || !reelsTrack) return;
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) return; // keep the static playlist view only
+
+    const slides = reelsTrack.querySelectorAll(".reel-slide");
+    if (!slides.length) return;
+
+    const PLAYLIST_DURATION = 10000; // ms before switching to reels
+    const REEL_INTERVAL = 2000;      // ms between each reel advance
+
+    let reelIndex = 0;
+    let reelTimer = null;
+    let cycleTimer = null;
+
+    function positionTrack(instant) {
+      const h = reelsView.clientHeight;
+      reelsTrack.style.transition = instant ? "none" : "transform 0.6s cubic-bezier(0.22,1,0.36,1)";
+      reelsTrack.style.transform = "translateY(-" + (reelIndex * h) + "px)";
+    }
+
+    function showReels() {
+      phoneScreen.classList.add("show-reels");
+      reelsView.classList.add("is-active");
+      const ytView = document.getElementById("ytView");
+      if (ytView) ytView.classList.remove("is-active");
+
+      reelIndex = 0;
+      positionTrack(true);
+
+      reelTimer = setInterval(function () {
+        reelIndex = (reelIndex + 1) % slides.length;
+        positionTrack(false);
+      }, REEL_INTERVAL);
+    }
+
+    function showPlaylist() {
+      phoneScreen.classList.remove("show-reels");
+      reelsView.classList.remove("is-active");
+      const ytView = document.getElementById("ytView");
+      if (ytView) ytView.classList.add("is-active");
+      if (reelTimer) { clearInterval(reelTimer); reelTimer = null; }
+    }
+
+    function runCycle() {
+      showPlaylist();
+      cycleTimer = setTimeout(function () {
+        showReels();
+        cycleTimer = setTimeout(runCycle, slides.length * REEL_INTERVAL);
+      }, PLAYLIST_DURATION);
+    }
+
+    runCycle();
+  }
+
+  /* =========================================================
      Init
   ========================================================= */
   document.addEventListener("DOMContentLoaded", function () {
@@ -235,6 +297,7 @@
     initLanguage();
     initMobileMenu();
     initScrollReveal();
+    initHeroDemo();
 
     document.getElementById("themeToggle").addEventListener("click", toggleTheme);
     document.getElementById("themeToggleMobile").addEventListener("click", toggleTheme);
