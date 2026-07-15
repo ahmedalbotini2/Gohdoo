@@ -8,6 +8,7 @@
     en: {
       nav_features: "Features",
       nav_privacy: "Privacy",
+      nav_howto: "How to Use",
       nav_download: "Download",
       nav_cta_text: "Download",
 
@@ -47,6 +48,11 @@
       privacy_point_2: "No screen data sent to servers by default",
       privacy_point_3: "No account required to use the app",
 
+      howto_eyebrow: "Get Started",
+      howto_title: "How to Use Ghadhoo",
+      howto_desc: "A quick walkthrough of setup and how the filter works on your screen.",
+      howto_video_fallback: "Your browser does not support the video tag.",
+
       cta_eyebrow: "Begin Today",
       cta_title: "Lower your gaze. Raise your peace.",
       cta_sub: "Free to download. Runs quietly in the background, protecting every app on your screen.",
@@ -57,6 +63,7 @@
     ar: {
       nav_features: "المزايا",
       nav_privacy: "الخصوصية",
+      nav_howto: "طريقة الاستخدام",
       nav_download: "تحميل",
       nav_cta_text: "تحميل",
 
@@ -95,6 +102,11 @@
       privacy_point_1: "لا لقطات شاشة تُحفظ أبدًا",
       privacy_point_2: "لا إرسال لبيانات الشاشة للخوادم افتراضيًا",
       privacy_point_3: "لا حاجة لحساب لاستخدام التطبيق",
+
+      howto_eyebrow: "ابدأ الآن",
+      howto_title: "طريقة استخدام غُضُّوا",
+      howto_desc: "جولة سريعة على طريقة الإعداد وكيف يعمل الفلتر على شاشتك.",
+      howto_video_fallback: "متصفحك لا يدعم عرض الفيديو.",
 
       cta_eyebrow: "ابدأ اليوم",
       cta_title: "غُضّ بصرك، وارتقِ بسكينتك.",
@@ -137,6 +149,25 @@
   /* =========================================================
      Language / i18n
   ========================================================= */
+  /* =========================================================
+     How-to-use video (language-aware source)
+  ========================================================= */
+  function updateHowToVideo(lang) {
+    const video = document.getElementById("howtoVideo");
+    const source = document.getElementById("howtoVideoSource");
+    if (!video || !source) return;
+
+    const path = lang === "ar" ? "res/screenshot_AR.mp4" : "res/screenshot_EN.mp4";
+    if (source.getAttribute("src") === path) return;
+
+    const wasPlaying = !video.paused;
+    source.setAttribute("src", path);
+    video.load();
+    if (wasPlaying) {
+      video.play().catch(function () { /* autoplay may be blocked, ignore */ });
+    }
+  }
+
   function applyLanguage(lang) {
     const dict = translations[lang] || translations.en;
     document.querySelectorAll("[data-i18n]").forEach((el) => {
@@ -155,6 +186,8 @@
     document.querySelectorAll(".lang-btn span").forEach((el) => {
       el.textContent = lang === "ar" ? "EN" : "AR";
     });
+
+    updateHowToVideo(lang);
 
     try { localStorage.setItem(STORAGE_LANG_KEY, lang); } catch (e) {}
   }

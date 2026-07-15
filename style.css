@@ -791,6 +791,30 @@ section { padding: 110px 0; }
 }
 
 /* =========================================================
+   How to Use
+========================================================= */
+.how-to-use { text-align: center; }
+
+.howto-video-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  padding: 10px;
+  background: var(--surface-1);
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 30px 70px -30px var(--shadow-color);
+}
+
+.howto-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: calc(var(--radius-lg) - 8px);
+  background: #000;
+  outline: none;
+}
+
+/* =========================================================
    CTA
 ========================================================= */
 .cta-section { text-align: center; }
